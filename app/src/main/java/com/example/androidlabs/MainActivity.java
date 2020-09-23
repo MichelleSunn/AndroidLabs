@@ -16,8 +16,6 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ResourceBundle;
 
 public class MainActivity extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
