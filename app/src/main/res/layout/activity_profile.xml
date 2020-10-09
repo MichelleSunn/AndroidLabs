@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/linearLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lab3Msg5"
+        android:textSize="30dp"/>
+
+    <TextView android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lab3Msg6"
+        android:textSize="30dp"/>
+
+    <EditText android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/lab3Msg7"
+        android:inputType="textCapWords"
+        android:textSize="28dp"/>
+
+    <TextView android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lab3Msg8"
+        android:textSize="30dp"/>
+
+    <EditText android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/lab3Msg9"
+        android:inputType="textEmailAddress"
+        android:textSize="28dp"/>
+
+    <TextView android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lab3Msg10"
+        android:textSize="30dp"/>
+
+    <ImageButton android:id="@+id/imageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/picture_frame"/>
+
+    <TextView android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lab3Msg11"
+        android:textSize="18dp"/>
+</LinearLayout>

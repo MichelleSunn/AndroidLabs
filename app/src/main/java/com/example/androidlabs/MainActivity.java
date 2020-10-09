@@ -2,46 +2,70 @@ package com.example.androidlabs;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.AlteredCharSequence;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.ResourceBundle;
-
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences prefs = null;
+    EditText editText;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_lab3);
+
+        editText = findViewById(R.id.editText);
+        prefs = getSharedPreferences("fileName", Context.MODE_PRIVATE);
+        String savedStr = prefs.getString("savedEmail", "");
+        editText.setText(savedStr);
+
+        Button login = findViewById(R.id.login);
+        login.setOnClickListener(click -> {
+            Intent goToProfile = new Intent(this, ProfileActivity.class);
+            goToProfile.putExtra("typedEmail", editText.getText().toString());
+            startActivity(goToProfile);
+        });
+    }
+
+    private void saveSharePrefs (String toString) {
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("savedEmail", toString);
+        editor.commit();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("savedEmail", editText.getText().toString());
+        saveSharePrefs(editText.getText().toString());
+        editor.commit();
+    }
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onStop() {
+        super.onStop();
+    }
 
-        setContentView(R.layout.activity_main_linear);
-
-        EditText editText = findViewById(R.id.editText);
-        String userInput = editText.getText().toString();
-
-        Button btn = findViewById(R.id.button);
-        btn.setOnClickListener(v -> {
-            Toast.makeText(MainActivity.this, getResources().getString(R.string.toast_message),Toast.LENGTH_LONG).show();
-        });
-
-        Switch sw = findViewById(R.id.switchID);
-
-        sw.setOnCheckedChangeListener((clicked, newState) -> {
-            String state;
-            if(newState){
-                state = getResources().getString(R.string.on);
-            }else state = getResources().getString(R.string.off);
-            Snackbar.make(editText, getResources().getString(R.string.switch_message) + " " + state, Snackbar.LENGTH_SHORT)
-                    .setAction(getResources().getString(R.string.undo), click ->clicked.setChecked(!newState)).show();
-        });
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }
 

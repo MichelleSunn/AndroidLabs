@@ -12,4 +12,15 @@
     <string name="on">on</string>
     <string name="off"> off</string>
     <string name="undo">UNDO</string>
+    <string name="lab3Msg1">Enter your email address: </string>
+    <string name="lab3Msg2">Type email here </string>
+    <string name="lab3Msg3">Type your password:  </string>
+    <string name="lab3Msg4">LOGIN</string>
+    <string name="lab3Msg5">Your profile</string>
+    <string name="lab3Msg6">Your name: </string>
+    <string name="lab3Msg7">Enter your name</string>
+    <string name="lab3Msg8">Your email: </string>
+    <string name="lab3Msg9">Enter your email</string>
+    <string name="lab3Msg10">Your picture: </string>
+    <string name="lab3Msg11">Click the button above to take a picture</string>
 </resources>
