@@ -24,4 +24,7 @@
     <string name="lab3Msg9">输入你的邮箱</string>
     <string name="lab3Msg10">你的照片： </string>
     <string name="lab3Msg11">点击上面的按键拍照</string>
+    <string name="lab4Msg1">开始对话</string>
+    <string name="lab4Msg2">发送</string>
+    <string name="lab4Msg3">接收</string>
 </resources>

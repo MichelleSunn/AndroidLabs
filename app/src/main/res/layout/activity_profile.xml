@@ -53,4 +53,9 @@
         android:layout_height="wrap_content"
         android:text="@string/lab3Msg11"
         android:textSize="18dp"/>
+
+    <Button android:id="@+id/goToChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lab4Msg1"/>
 </LinearLayout>

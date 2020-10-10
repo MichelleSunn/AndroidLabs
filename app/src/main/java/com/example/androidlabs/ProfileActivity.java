@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -49,6 +50,13 @@ public class ProfileActivity extends AppCompatActivity {
             dispatchTakePictureIntent();
         });
         Log.e(ACTIVITY_NAME, "In function: onCreate");
+
+        Button goToChatBtn = findViewById(R.id.goToChat);
+        goToChatBtn.setOnClickListener(click ->{
+            Intent goToChat = new Intent(this, ChatRoomActivity.class);
+            startActivity(goToChat);
+        });
+
     }
 
     @Override

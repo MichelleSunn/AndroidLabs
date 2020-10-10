@@ -23,4 +23,7 @@
     <string name="lab3Msg9">Enter your email</string>
     <string name="lab3Msg10">Your picture: </string>
     <string name="lab3Msg11">Click the button above to take a picture</string>
+    <string name="lab4Msg1">Go to chat</string>
+    <string name="lab4Msg2">SEND</string>
+    <string name="lab4Msg3">RECEIVE</string>
 </resources>
