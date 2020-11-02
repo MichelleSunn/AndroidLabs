@@ -49,7 +49,7 @@ public class ProfileActivity extends AppCompatActivity {
         mImageButton.setOnClickListener(click ->{
             dispatchTakePictureIntent();
         });
-        Log.e(ACTIVITY_NAME, "In function: onCreate");
+        //Log.e(ACTIVITY_NAME, "In function: onCreate");
 
         Button goToChatBtn = findViewById(R.id.goToChat);
         goToChatBtn.setOnClickListener(click ->{
@@ -62,24 +62,24 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.e(ACTIVITY_NAME, "In function: onResume");
+        //Log.e(ACTIVITY_NAME, "In function: onResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.e(ACTIVITY_NAME, "In function: onPause");
+        //Log.e(ACTIVITY_NAME, "In function: onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.e(ACTIVITY_NAME, "In function: onStop");
+        //Log.e(ACTIVITY_NAME, "In function: onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.e(ACTIVITY_NAME, "In function: onDestroy");
+        //Log.e(ACTIVITY_NAME, "In function: onDestroy");
     }
 }
