@@ -26,4 +26,5 @@
     <string name="lab4Msg1">Go to chat</string>
     <string name="lab4Msg2">SEND</string>
     <string name="lab4Msg3">RECEIVE</string>
+    <string name="lab6Msg1">Weather Forecast</string>
 </resources>

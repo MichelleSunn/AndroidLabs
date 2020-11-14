@@ -58,4 +58,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/lab4Msg1"/>
+
+    <Button android:id="@+id/weatherForecast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lab6Msg1"/>
 </LinearLayout>

@@ -124,7 +124,7 @@ public class ChatRoomActivity extends AppCompatActivity {
         }
     }
 
-    private void printCursor(Cursor c, int version) {
+    private void printCursor(Cursor results, int version) {
         String printEachRow = printEachRow();
         Log.d("PrintCursor","The database version number: "+DatabaseOpener.VERSION_NUM);
         Log.d("PrintCursor","The number of columns: "+results.getColumnCount());
