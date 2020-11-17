@@ -17,8 +17,8 @@ public class DetailsFragment extends Fragment {
 
     private Bundle dataFromActivity;
     private long id;
-    private AppCompatActivity parentActivity;
     private boolean isSend;
+    private AppCompatActivity parentActivity;
 
 
     @Override
@@ -27,6 +27,7 @@ public class DetailsFragment extends Fragment {
         dataFromActivity = getArguments();
         id = dataFromActivity.getLong("id");
         isSend = dataFromActivity.getInt("isSend") == -1;
+
         // Inflate the layout for this fragment
         View result =  inflater.inflate(R.layout.fragment_details, container, false);
         //show the message

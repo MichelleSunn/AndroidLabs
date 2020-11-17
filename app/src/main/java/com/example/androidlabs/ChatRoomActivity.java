@@ -32,7 +32,7 @@ public class ChatRoomActivity extends AppCompatActivity {
     DatabaseOpener dbOpener;
     Cursor results;
     Boolean isTablet;
-
+    DetailsFragment dFragment;
     private static int ACTIVITY_CHATFRAGMENT = 40;
     private static int ACTIVITY_PHONEFRAGMENT = 33;
     public static final int EMPTY_ACTIVITY = 345;
@@ -41,7 +41,7 @@ public class ChatRoomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
-
+        //dFragment = new DetailsFragment();
         Button send = findViewById(R.id.sendBtn);
         Button receive = findViewById(R.id.receiveBtn);
         EditText typeHere = findViewById(R.id.typeHere);
@@ -99,6 +99,9 @@ public class ChatRoomActivity extends AppCompatActivity {
                         deleteMsg(selectedMsg);
                         messages.remove(selectedMsg);
                         myAdapter.notifyDataSetChanged();
+                        if(isTablet) {
+                            getSupportFragmentManager().beginTransaction().remove(dFragment).commit();
+                        }
                     })
                     .setNegativeButton("No", (click, arg) -> {
                     })
@@ -107,12 +110,13 @@ public class ChatRoomActivity extends AppCompatActivity {
         });
 
         myList.setOnItemClickListener((list, view, position, id) -> {
+
             Bundle dataToPass = new Bundle();
             dataToPass.putString("Message", messages.get(position).toString());
             dataToPass.putLong("id", id);
-            dataToPass.putInt("isSend", message.getType());
+            dataToPass.putInt("isSend", messages.get(position).getType());
             if(isTablet){
-                DetailsFragment dFragment = new DetailsFragment();
+                dFragment = new DetailsFragment();
                 dFragment.setArguments(dataToPass);
                 getSupportFragmentManager()
                         .beginTransaction()
