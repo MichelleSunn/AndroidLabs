@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -30,6 +31,11 @@ public class ChatRoomActivity extends AppCompatActivity {
     SQLiteDatabase db;
     DatabaseOpener dbOpener;
     Cursor results;
+    Boolean isTablet;
+
+    private static int ACTIVITY_CHATFRAGMENT = 40;
+    private static int ACTIVITY_PHONEFRAGMENT = 33;
+    public static final int EMPTY_ACTIVITY = 345;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,8 @@ public class ChatRoomActivity extends AppCompatActivity {
         Button receive = findViewById(R.id.receiveBtn);
         EditText typeHere = findViewById(R.id.typeHere);
         ListView myList = findViewById(R.id.theListView);
+        isTablet = findViewById(R.id.theFrameLayout) != null;
+
         loadDataFromDatabase();
         myAdapter = new MyListAdapter();
         myList.setAdapter(myAdapter);
@@ -96,6 +104,27 @@ public class ChatRoomActivity extends AppCompatActivity {
                     })
                     .create().show();
             return true;
+        });
+
+        myList.setOnItemClickListener((list, view, position, id) -> {
+            Bundle dataToPass = new Bundle();
+            dataToPass.putString("Message", messages.get(position).toString());
+            dataToPass.putLong("id", id);
+            dataToPass.putInt("isSend", message.getType());
+            if(isTablet){
+                DetailsFragment dFragment = new DetailsFragment();
+                dFragment.setArguments(dataToPass);
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.theFrameLayout, dFragment)
+                        .commit();
+            }
+            else{
+                Intent nextActivity = new Intent(this, emptyActivity.class);
+                nextActivity.putExtras(dataToPass);
+                startActivityForResult(nextActivity,EMPTY_ACTIVITY);
+            }
+
         });
     }
 
@@ -208,5 +237,7 @@ public class ChatRoomActivity extends AppCompatActivity {
         public long getId() {
             return id;
         }
+
+        public int getType() { return type;}
     }
     }

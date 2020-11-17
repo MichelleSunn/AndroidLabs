@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/lab4Msg2"
+        android:gravity="fill"
+        android:textAlignment="center"
+        tools:ignore="RtlCompat" />
+    <Button
+        android:id="@+id/receiveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/theFrameLayout"
+        android:text="@string/lab4Msg3"
+        android:gravity="fill"
+        android:textAlignment="center"
+        tools:ignore="RtlCompat" />
+
+    <EditText
+        android:id="@+id/typeHere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/sendBtn"
+        android:layout_toLeftOf="@id/receiveBtn"
+        android:hint="Type here"
+        android:inputType="text" />
+
+    <ListView
+        android:id="@+id/theListView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/typeHere"
+        android:layout_alignParentTop = "true"/>
+
+    <FrameLayout
+        android:id="@+id/theFrameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/theListView"/>
+</RelativeLayout>
