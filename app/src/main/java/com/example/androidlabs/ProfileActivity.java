@@ -16,6 +16,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     public static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    static final int REQUEST_TOOLBAR = 1;
     ImageButton mImageButton;
 
     private void dispatchTakePictureIntent() {
@@ -63,6 +64,11 @@ public class ProfileActivity extends AppCompatActivity {
             startActivity(weatherForecast);
         }));
 
+        Button goToToolbar = findViewById(R.id.goToToolbarButton);
+        goToToolbar.setOnClickListener(click ->{
+            Intent toolbar = new Intent(this, TestToolbar.class);
+            startActivityForResult(toolbar, REQUEST_TOOLBAR);
+        });
     }
 
     @Override

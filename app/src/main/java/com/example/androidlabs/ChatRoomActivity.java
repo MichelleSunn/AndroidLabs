@@ -33,8 +33,6 @@ public class ChatRoomActivity extends AppCompatActivity {
     Cursor results;
     Boolean isTablet;
     DetailsFragment dFragment;
-    private static int ACTIVITY_CHATFRAGMENT = 40;
-    private static int ACTIVITY_PHONEFRAGMENT = 33;
     public static final int EMPTY_ACTIVITY = 345;
 
     @Override
