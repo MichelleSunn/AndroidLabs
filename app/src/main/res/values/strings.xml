@@ -28,4 +28,6 @@
     <string name="lab4Msg3">RECEIVE</string>
     <string name="lab6Msg1">Weather Forecast</string>
     <string name="lab7Msg1">Message Here</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 </resources>

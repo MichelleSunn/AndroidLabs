@@ -16,7 +16,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     public static final String ACTIVITY_NAME = "PROFILE_ACTIVITY";
     static final int REQUEST_IMAGE_CAPTURE = 1;
-    static final int REQUEST_TOOLBAR = 1;
+    static final int REQUEST_TOOLBAR = 2;
     ImageButton mImageButton;
 
     private void dispatchTakePictureIntent() {
@@ -34,7 +34,10 @@ public class ProfileActivity extends AppCompatActivity {
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             mImageButton.setImageBitmap(imageBitmap);
         }
-        Log.e(ACTIVITY_NAME, "In function: onActivityResult ");
+        if( requestCode == REQUEST_TOOLBAR && resultCode == 500){
+            this.finish();
+        }
+        //Log.e(ACTIVITY_NAME, "In function: onActivityResult ");
     }
 
     @Override
